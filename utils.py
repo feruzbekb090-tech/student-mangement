@@ -22,4 +22,4 @@ def show_menu() -> None:
 
 
 def break_line() -> None:
-    cprint(text="" - " * 100", fore_256="black", back_256="yellov")
+    cprint(" - " * 100, fore_256="black", back_256="yellov")
