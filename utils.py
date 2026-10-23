@@ -1,6 +1,5 @@
 from colored import cprint
 
-
 menu_text = """1. Barcha o‘quvchilarni ko‘rish
 2. O‘quvchi qo‘shish
 3. O‘quvchi ma’lumotlarini tahrirlash
@@ -23,4 +22,4 @@ def show_menu() -> None:
 
 
 def break_line() -> None:
-    print("-" * 100)
+    cprint(text="(" - " * 100)", fore_256="yellov", back_256="black")
