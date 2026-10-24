@@ -2,39 +2,42 @@ from colored import cprint
 
 import database
 
-menu_text = """
-1. Barcha o‘quvchilarni ko‘rish
-2. O‘quvchi qo‘shish
-3. O‘quvchi ma’lumotlarini tahrirlash
-4. O‘quvchini o‘chirish
-5. O‘quvchini ID orqali qidirish
-6. O‘quvchini ism orqali qidirish
-7. O‘quvchiga baho qo‘shish
-8. O‘quvchining baholarini ko‘rish
-9. O‘rtacha bahoni ko‘rish
-10. O‘quvchilar reytingi
-11. Eng yuqori natijali o‘quvchi
-12. Guruh bo‘yicha filtrlash
-13. Fan bo‘yicha eng yuqori o‘rtacha
-14. O‘rtacha bahosi 4 dan yuqori o‘quvchilar
-15. Matnli hisobot yaratish
-0. Chiqish"""
+# (belgi, matn, rang) — belgi doira ichidagi raqam
+menu_items = [
+    ("①", "Barcha o‘quvchilarni ko‘rish", "cyan"),
+    ("②", "O‘quvchi qo‘shish", "cyan"),
+    ("③", "O‘quvchi ma’lumotlarini tahrirlash", "cyan"),
+    ("④", "O‘quvchini o‘chirish", "cyan"),
+    ("⑤", "O‘quvchini ID orqali qidirish", "cyan"),
+    ("⑥", "O‘quvchini ism orqali qidirish", "cyan"),
+    ("⑦", "O‘quvchiga baho qo‘shish", "cyan"),
+    ("⑧", "O‘quvchining baholarini ko‘rish", "cyan"),
+    ("⑨", "O‘rtacha bahoni ko‘rish", "cyan"),
+    ("⑩", "O‘quvchilar reytingi", "cyan"),
+    ("⑪", "Eng yuqori natijali o‘quvchi", "cyan"),
+    ("⑫", "Guruh bo‘yicha filtrlash", "magenta"),
+    ("⑬", "Fan bo‘yicha eng yuqori o‘rtacha", "magenta"),
+    ("⑭", "O‘rtacha bahosi 4 dan yuqori o‘quvchilar", "magenta"),
+    ("⑮", "Matnli hisobot yaratish", "magenta"),
+    ("⓪", "Chiqish", "red"),
+]
 
 
 def show_menu() -> None:
     cprint(
-        text="===== STUDENT MANAGEMENT SYSTEM =====", fore_256="cyan", back_256="white"
+        text="===== STUDENT MANAGEMENT SYSTEM =====", fore_256="black", back_256="cyan"
     )
-    print(menu_text)
+    for symbol, text, color in menu_items:
+        cprint(f" {symbol}  {text}", fore_256=color)
 
 
 def break_line() -> None:
-    cprint("-" * 100, fore_256="black", back_256="yellow")
+    cprint("-" * 100, fore_256="blue")
 
 
 # ---------- Rangli xabarlar ----------
 def print_success(message: str) -> None:
-    cprint(f" {message} ", fore_256="white", back_256="green")
+    cprint(f" {message} ", fore_256="black", back_256="green")
 
 
 def print_error(message: str) -> None:
